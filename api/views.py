@@ -100,6 +100,9 @@ def uploadCsv(request):
         )
         print('email sent')
         print(request.user.email)
+        messages.success(request, 'Database successfully populated with csv file content')
+    else:
+        messages.error(request, 'Something went wrong. Try again')
     contact_list = []
 
     context= {}
