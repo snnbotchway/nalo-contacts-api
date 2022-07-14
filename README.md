@@ -40,7 +40,7 @@ Endpoint |HTTP Method | CRUD Method | Result
 - To proceed, install postgresql from https://www.postgresql.org/download/
 - Run pgAdmin and connect to one server. You can use a local server or create a remote one on `https://www.elephantsql.com/`
 - Right-click the server, click properties and note down the connection details. If you used the remote server, get the connection details from elephantsql.
-- Create a database as well
+- Create a database as well.
 
 ## Gmail Config
 To enable automated mail sending in Django, we are required to set up a google account to do so.
@@ -60,8 +60,8 @@ DATABASE_HOST='localhost'
 DATABASE_PORT='5432'
 EMAIL_USER=<Your email address>
 EMAIL_PASSWORD=<SMTP generated password>
-SECRET_KEY = '<Contact solomonbotchway7@gmail.com for secret key'
-DEBUG=False
+SECRET_KEY = '<Contact solomonbotchway7@gmail.com for secret key>'
+DEBUG=True
 ```
 
 ## Run Server
