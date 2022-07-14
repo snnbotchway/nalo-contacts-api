@@ -63,7 +63,7 @@ def contactDelete(request, pk):
 def uploadCsv(request):
     template = 'upload-csv.html'
     prompt = {
-            'order': 'Order of CSV should be name, phone. They should be headers as well'
+            'order': 'Order of CSV should be name, phone.'
         }
     try:
         if request.method == 'GET':
