@@ -62,11 +62,10 @@ def contactDelete(request, pk):
 @permission_required('admin.can_add_log_entry')
 def uploadCsv(request):
     template = 'upload-csv.html'
-    try:
-        prompt = {
+    prompt = {
             'order': 'Order of CSV should be name, phone'
         }
-
+    try:
         if request.method == 'GET':
             return render(request, template, prompt)
 
