@@ -100,23 +100,18 @@ For example, if the URL is `http://127.0.0.1:8000/`:
 - Load initial data by uploading the `mock_data(10,000 entries).csv` in this repo to `http://127.0.0.1:8000/api/upload-csv/`. (Credit to mockaroo.com for the mock data) A notification will be sent to the admin's email upon the successful population of the database from the email we set up earlier.
 
 List phone numbers/contacts in batches of 20 with pagination through the rest of the record)
-
 `http://127.0.0.1:8000/api/contact-list` 
 
 Create a new contact
-
 `http://127.0.0.1:8000/api/contact-create`
 
 Retrieve a contact with id
-
 `http://127.0.0.1:8000/api/<id>`
 
 Edit contact with id
-
 `http://127.0.0.1:8000/api/contact-edit/<id>`
 
 Delete contact with id
-
 `http://127.0.0.1:8000/api/contact-delete/<id>`
 
 
