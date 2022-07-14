@@ -40,16 +40,16 @@ Endpoint |HTTP Method | CRUD Method | Result
 
 ## Setting Up Postgresql
 - To proceed, install postgresql from https://www.postgresql.org/download/
-- Run pgAdmin and connect to one server. You can use a local server or create a remote one on `https://www.elephantsql.com/`
+- Run pgAdmin and connect to one server. You can use a local server or create a remote one on https://www.elephantsql.com/
 - Right-click the server, click properties and note down the connection details. If you used the remote server, get the connection details from elephantsql.
 - Create a database as well.
 
 ## Gmail Config
 To enable automated mail sending in Django, we are required to set up a google account to do so.
 - Login to the google account you wish to use to send the emails.
-- At `https://myaccount.google.com/security`, configure Two-Factor-Authentication and turn it on.
+- At https://myaccount.google.com/security, configure Two-Factor-Authentication and turn it on.
 - Just below, click `App Passwords` and generate a password for SMTP. Note this password as it will be used later.
-- At `https://accounts.google.com/b/0/DisplayUnlockCaptcha`, grant access to the account.
+- At https://accounts.google.com/b/0/DisplayUnlockCaptcha, grant access to the account.
 
 ## Setting Environment Variables
 Create a `.env` file in the same directory as `manage.py`
