@@ -74,9 +74,9 @@ Open another shell and test the API:
 All 5 endpoints should pass the test at this point
 
 ## Use
-- Open a browser and enter the url from the `python3 manage.py runserver` command
-- For example if the url is `http://127.0.0.1:8000/`:
-- Go to `http://127.0.0.1:8000/admin/` and login with the credentials of the superuser you created.
+- Open a browser and enter the URL from the `python3 manage.py runserver` command
+For example, if the URL is `http://127.0.0.1:8000/`:
+- Go to `http://127.0.0.1:8000/admin/` and log in with the credentials of the superuser you created.
 - You will now have access to all the endpoints
 - Load initial data by uploading the `mock_data(10,000 entries).csv` in this repo to `http://127.0.0.1:8000/api/upload-csv/`. (Credit to mockaroo.com for the mock data) A notification will be sent to the admin's email upon the successful population of the database from the email we set up earlier.
 
