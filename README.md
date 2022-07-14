@@ -31,7 +31,7 @@ In our case, we have one single resource, `api`, so we will use the following UR
 
 Endpoint |HTTP Method | CRUD Method | Result
 -- | -- |-- |--
-`api` | GET | READ | Get all contacts(20 per page)
+`api` | GET | READ | Get all contacts (20 per page)
 `api/:id` | GET | READ | Get a single contact
 `api/contact-create`| POST | CREATE | Create a new contact
 `api/contact-edit/:id` | PUT | UPDATE | Update a contact
