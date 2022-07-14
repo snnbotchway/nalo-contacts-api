@@ -18,11 +18,11 @@ For python3:
 For python2:
 `pipenv --two`
 
+You can install all the required dependencies by running
+`pipenv install -r requirements.txt`
+
 After this, it is necessary to activate the virtual environment
 `pipenv shell`
-
-You can install all the required dependencies by running
-`pip install -r requirements.txt`
 
 ## Structure
 In a RESTful API, endpoints (URLs) define the structure of the API and how end users access data from our application using the HTTP methods - GET, POST, PUT, and DELETE. Endpoints should be logically organized around _collections_ and _elements_, both of which are resources.
@@ -67,14 +67,18 @@ DEBUG=True
 ```
 
 ## Run Server
+
+Run the following to create initial database tables:
+`python3 manage.py makemigrations`
+`python3 manage.py migrate`
+
 Only an admin can use this API so create one:
 `python3 manage.py createsuperuser`
 Give this user an email as the CSV file upload notification will be sent to it.
-Run the following to create database tables:
-`python3 manage.py makemigrations`
-`python3 manage.py migrate`
+Run the makemigrations and migrate commands once more to add the user to the database.
+
 Now `python3 manage.py runserver`
-Open another shell and test the API:
+Open another terminal and test the API with the tests provided:
 `python3 manage.py test`
 All 5 endpoints should pass the test at this point
 
