@@ -9,7 +9,6 @@ import csv,io
 from django.contrib.auth.decorators import permission_required
 
 from django.core.mail import send_mail
-from django.template.loader import render_to_string
 
 
 # Create your views here.
@@ -89,28 +88,28 @@ def uploadCsv(request):
             )
 
             contact_list.append(contact)
-        
-        Contact.objects.bulk_create(contact_list)
-        if contact_list:
-            send_mail(
-                'CSV file uploaded',
-                'Your csv file was uploaded and the database was successfully populated with the information',
-                'solomonbotchway7@gmail.com',
-                [request.user.email],
-                fail_silently=True,
-            )
-            print('email sent')
-            print(request.user.email)
+
+        try:
+            Contact.objects.bulk_create(contact_list)
             messages.success(request, 'Database successfully populated with csv file content')
-        else:
-            messages.error(request, 'Something went wrong. Try again')
-        contact_list = []
+            if contact_list:
+                send_mail(
+                    'CSV file uploaded',
+                    'Your csv file was uploaded and the database was successfully populated with the information.',
+                    'solomonbotchway7@gmail.com',
+                    [request.user.email],
+                    fail_silently=True,
+            )
+        except:
+            messages.error(request, 'Error populating database with CSV data. Ensure the data in the csv is compatible and try again.')
+
+        contact_list = [] #free memory
 
         context= {}
 
         return render(request, template, context)
     except:
-        messages.error(request, 'Something went wrong, make sure you have uploaded a valid csv file and try again')
+        messages.error(request, 'Something went wrong, make sure you have uploaded a valid csv file and try again.')
         return render(request, template)
 
     
