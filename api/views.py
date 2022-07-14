@@ -63,7 +63,7 @@ def contactDelete(request, pk):
 def uploadCsv(request):
     template = 'upload-csv.html'
     prompt = {
-            'order': 'Order of CSV should be name, phone'
+            'order': 'Order of CSV should be name, phone. They should be headers as well'
         }
     try:
         if request.method == 'GET':
@@ -110,46 +110,3 @@ def uploadCsv(request):
     except:
         messages.error(request, 'Something went wrong, make sure you have uploaded a valid csv file and try again.')
         return render(request, template)
-
-    
-
-
-
-# def uploadCsv(request):
-#     data = {}
-#     if "GET" == request.method:
-#         return render(request, "upload-csv.html", data)
-#     # if not GET, then proceed with processing
-#     try:
-#         csv_file = request.FILES["csv_file"]
-#         if not csv_file.name.endswith('.csv'):
-#             messages.error(request,'File is not CSV type')
-#             return HttpResponseRedirect(reverse("api:upload-csv"))
-#         #if file is too large, return message
-#         if csv_file.multiple_chunks():
-#             messages.error(request,"Uploaded file is too big (%.2f MB)." % (csv_file.size/(1000*1000),))
-#             return HttpResponseRedirect(reverse("api:upload-csv"))
-#         file_data = csv_file.read().decode("utf-8")          
-
-#         lines = file_data.split("\n")
-#         #loop over the lines and save them in db. If error shows up , store as string and then display
-#         for line in lines:                                          
-#             fields = line.split(",")
-#             data_dict = {}
-#             data_dict["name"] = fields.first()
-#             data_dict["phone"] = fields[1]
-#         try:
-#             form = EventsForm(data_dict)
-#             if form.is_valid():
-#                 form.save()                                  
-#             else:
-#                 logging.getLogger("error_logger").error(form.errors.as_json())                                                                                    
-#         except Exception as e:
-#             logging.getLogger("error_logger").error(repr(e))                             
-#             pass
-
-#     except Exception as e:
-#         logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
-#         messages.error(request,"Unable to upload CVS file. "+repr(e))
-
-#         return HttpResponseRedirect(reverse("api:upload-csv"))
