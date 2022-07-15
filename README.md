@@ -62,7 +62,7 @@ DATABASE_HOST='localhost'
 DATABASE_PORT='5432'
 EMAIL_USER=<Your email address>
 EMAIL_PASSWORD=<SMTP generated password>
-SECRET_KEY = '<Contact solomonbotchway7@gmail.com for secret key>'
+SECRET_KEY = '<Enter a generated secret key>'
 DEBUG=True
 ```
 
